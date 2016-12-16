@@ -4,11 +4,12 @@ brew:
     - homebrew/versions
     - homebrew/services
     - caskroom/cask
+    - caskroom/versions
   install_packages:
     - docker
     - docker-compose
     - docker-machine
-    - emacs
+    - emacs --with-cocoa --srgb
     - fish
     - gauche
     - gibo
