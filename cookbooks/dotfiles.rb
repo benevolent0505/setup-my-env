@@ -5,5 +5,11 @@ end
 
 link '.emacs.d' do
   cwd "/Users/#{node[:user]}"
-  link 'develop/src/github.com/benevolent0505/dotfiles/.emacs.d'
+  to 'develop/src/github.com/benevolent0505/dotfiles/.emacs.d'
+end
+
+link '.bashrc' do
+  cwd "/Users/#{node[:user]}"
+  to 'develop/src/github.com/benevolent0505/dotfiles/config/.bashrc'
+  not_if 'test $(cat .bashrc)'
 end
