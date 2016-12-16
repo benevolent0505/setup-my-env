@@ -1,4 +1,10 @@
+execute 'Installl command line tools' do
+  user node[:user]
+  command 'xcode-select --install'
+end
+
 execute 'Install Homebrew' do
   user node[:user]
-  command '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+  command 'yes "" | /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+  not_if 'test $(which /usr/local/bin/brew)'
 end
