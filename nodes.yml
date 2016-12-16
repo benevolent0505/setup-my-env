@@ -23,6 +23,7 @@ brew:
     - mongodb
     - nkf
     - openssl
+    - peco
     - readline
     - redis
     - rlwrap
