@@ -1,3 +1,9 @@
+# ricty
+execute 'install ricty font' do
+  command 'cp -r /usr/local/opt/ricty/share/fonts/Ricty-*.ttf ~/Library/Fonts'
+  command 'fc-cache -fv'
+end
+
 # go tools
 execute 'install go tools' do
   command 'go get -u golang.org/x/tools'

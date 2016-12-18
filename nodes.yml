@@ -5,6 +5,8 @@ brew:
     - homebrew/services
     - caskroom/cask
     - caskroom/versions
+    - caskroom/fonts
+    - sanemat/font
   install_packages:
     - docker
     - docker-compose
@@ -26,6 +28,7 @@ brew:
     - peco
     - readline
     - redis
+    - ricty
     - rlwrap
     - sbt
     - sqlite
