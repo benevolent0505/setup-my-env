@@ -7,7 +7,7 @@ end
 
 execute 'Install Java' do
   command 'brew install cask java'
-  not_if 'test $(javac -version)'
+  not_if 'test -e $(which /usr/bin/java)'
 end
 
 node[:brew][:install_packages].each do |package|
@@ -22,6 +22,7 @@ end
 execute 'Install MySQL 5.5' do
   user node[:user]
   command 'brew install mysql55 --force'
+  not_if "test $(brew list | grep mysql@5.5)"
 end
 
 node[:brew][:install_cask_packages].each do |package|
