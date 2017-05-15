@@ -5,7 +5,9 @@
 end
 
 execute 'clone xremap' do
+  user "#{node[:linux_user]}"
   command "#{ENV['HOME']}/develop/bin/ghq get https://github.com/k0kubun/xremap"
+  not_if "test -d #{ENV['HOME']}/develop/src/github.com/k0kubun/xremap"
 end
 
 execute 'make xremap' do

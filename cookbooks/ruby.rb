@@ -5,15 +5,18 @@
 end
 
 directory "#{ENV['HOME']}/.rbenv" do
+  user "#{node[:linux_user]}"
   action :create
 end
 
 git "#{ENV['HOME']}/.rbenv" do
+  user "#{node[:linux_user]}"
   repository 'git://github.com/rbenv/rbenv'
   not_if "test -d #{ENV['HOME']}/.rbenv"
 end
 
 git "#{ENV['HOME']}/.rbenv/plugins/ruby-build" do
+  user "#{node[:linux_user]}"
   repository 'git://github.com/rbenv/ruby-build'
   not_if "test -d #{ENV['HOME']}/.rbenv/plugins/ruby-build"
 end

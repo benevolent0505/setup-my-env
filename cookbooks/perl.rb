@@ -1,13 +1,18 @@
 directory "#{ENV['HOME']}/.plenv" do
+  user "#{node[:linux_user]}"
   action :create
 end
 
 git "#{ENV['HOME']}/.plenv" do
+  user "#{node[:linux_user]}"
   repository 'git://github.com/tokuhirom/plenv.git'
+  not_if "test -d #{ENV['HOME']}/.plenv"
 end
 
 git "#{ENV['HOME']}/.plenv/plugins/perl-build" do
+  user "#{node[:linux_user]}"
   repository 'git://github.com/tokuhirom/Perl-Build.git'
+  not_if "test -d #{ENV['HOME']}/.plenv/Perl-Build"
 end
 
 # not working
