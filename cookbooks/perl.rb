@@ -7,13 +7,20 @@ git "#{ENV['HOME']}/.plenv" do
 end
 
 git "#{ENV['HOME']}/.plenv/plugins/perl-build" do
-  repository 'git://github.com/tokuhiromu/Perl-Build'
+  repository 'git://github.com/tokuhirom/Perl-Build.git'
 end
 
-execute 'setup perl' do
-  command './plenv/bin/plenv init -'
-  command "plenv install #{node[:perl_version]}"
-  command "plenv global #{node[:perl_version]}"
-  command 'plenv rehash'
-  command 'plenv install-cpanm'
+# not working
+execute 'setup plenv' do
+  cwd "#{ENV['HOME']}/.plenv/bin"
+  command './plenv init -'
+end
+
+# not working
+execute 'install perl' do
+  cwd "#{ENV['HOME']}/.plenv/bin"
+  command "./plenv install #{node[:perl_version]}"
+  command "./plenv global #{node[:perl_version]}"
+  command './plenv rehash'
+  command './plenv install-cpanm'
 end
