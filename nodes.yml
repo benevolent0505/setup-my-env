@@ -9,10 +9,7 @@ brew:
     - caskroom/fonts
     - sanemat/font
   install_packages:
-    - docker
-    - docker-compose
-    - docker-machine
-    - emacs --with-cocoa --srgb
+    - emacs --with-cocoa --with-gnutls --with-imagemagick@6
     - fish
     - gauche
     - gibo
@@ -29,7 +26,6 @@ brew:
     - peco
     - readline
     - redis
-    - ricty
     - rlwrap
     - sbt
     - sqlite
@@ -41,6 +37,8 @@ brew:
     - libyaml
     - libffi
   install_cask_packages:
+    - font-source-han-code-jp
+    - docker
     - aquaskk
     - alfred
     - atom
@@ -50,30 +48,24 @@ brew:
     - diskwave
     - dropbox
     - enpass
-    - firefoxdeveloperedition
     - gitkraken
     - google-chrome
-    - google-drive
+    - google-backup-and-sync
     - gyazo
     - intellij-idea
     - intellij-idea-ce
     - iterm2
-    - karabiner
     - kindle
     - licecap
-    - limechat
     - microsoft-remote-desktop-beta
     - night-owl
     - skype
     - slack-beta
-    - sourcetree
-    - thunderbird-ja
     - vagrant
     - virtualbox
-    - wireshark
     - xquartz
 perl_version: 5.24.1
-ruby_version: 2.4.1
+ruby_version: 2.4.2
 node_version: v7.2.1
-emacs_version: 25.2
+emacs_version: 25.3
 peco_version: 0.5.1
